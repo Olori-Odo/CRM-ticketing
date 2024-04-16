@@ -1,12 +1,17 @@
-import { useState } from "react";
-import "./App.css";
 
-function App() {
-  return (
+import Router from './Router'
+import './App.css'
+import Sidebar from './components/sidebar/Sidebar'
+
+
+const App=()=>{
+
+  return(
     <>
-      <h1>Diamond Techies's CRM-Ticketing..</h1>
+    <Router/>
     </>
-  );
+  )
 }
 
-export default App;
+
+export default App
