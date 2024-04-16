@@ -12,10 +12,10 @@ const Forgotpass = () => {
         if (email.trim() === '') {
             setMessage('Please enter your email address.');
         } else {
-            // Simulate password reset process
+           
             setTimeout(() => {
                 setMessage('A password reset process has been initiated. Check your email for further instructions.');
-            }, 4000); // Simulate 2 seconds delay
+            }, 4000); 
         }
     };
 
