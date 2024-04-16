@@ -4,7 +4,9 @@ import "./MainLayout.css"
 const MainLayout = () => {
   return (
     <div className='Out'>
+      <div className='let'>
       <Outlet/>
+      </div>
     </div>
   )
 }
