@@ -1,0 +1,47 @@
+.formm{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid #333;
+    background-color: #F3EFFC;
+}
+
+
+
+
+.formm label .Input {
+    background-color: #E7E7E7;
+    color: #7F56D8;
+    width: 96%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+
+
+.submmit {
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    background-color: #7F56D8;
+}
+
+.submit:hover {
+    background-color: #b294f3;
+}
+
+
+.success-message{
+    color: blueviolet;
+}
