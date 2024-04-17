@@ -1,7 +1,7 @@
 
-import Router from './Router'
+import Router from './router'
 import './App.css'
-import Sidebar from './components/sidebar/Sidebar'
+
 
 
 const App=()=>{
