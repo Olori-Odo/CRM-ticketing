@@ -7,15 +7,36 @@ import { HiOutlineUsers } from "react-icons/hi2";
 import { RiSettingsLine } from "react-icons/ri";
 import ticket from "..//../assets/Tickets.png";
 
-import MyNavlinks from "../navlink/Navlinks";
+
 
 const Sidebar = () => {
+  const links=[
+    { id:1, tolink:'/', icon:<RxDashboard />, label:'Dashboard' }, 
+    {id:2, tolink:'/users', icon:<FaRegUser />, label:'Users'}, 
+    {id:3, tolink:'/tickets', icon:<LuTicket  />, label:'Tickets'}, 
+    {id:4,  tolink:'/officials', icon:<HiOutlineUsers />, label:'Officials' },
+     {id:5, tolink:'/SiteSettings', icon: <RiSettingsLine />, label:'Site Settings' }
+  ]
+
+  const linksoutput= links.map((item)=>{
+    return <NavLink id='links' key={item.id} to={item.tolink}>{item.icon}&nbsp;&nbsp; {item.label}</NavLink>
+  })
+  
+
+
   return (
     <div id="sidewrapper">
       <div id="heading">TICKET LEAD</div>
 
       <div id="linkwrapper">
-        <NavLink id="links"   to={'/'}>
+         {linksoutput}
+      </div>
+    </div>
+  );
+};
+
+/*
+<NavLink id="links"   to={'/'}>
           <RxDashboard /> &nbsp;&nbsp; Dashboard
         </NavLink>
         <NavLink id="links" to={'/users'}>
@@ -36,9 +57,9 @@ const Sidebar = () => {
           <RiSettingsLine />
           &nbsp;&nbsp;Site Settings{" "}
         </NavLink>
-      </div>
-    </div>
-  );
-};
+  */
+
+
+
 
 export default Sidebar;

@@ -1,20 +1,16 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Sidebar from "./components/sidebar/Sidebar"
-import Users from "./Pages/User"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Sidebar from "./components/sidebar/Sidebar";
+import Dashboard from "./Layout/DashboardLayout";
 
-
-
-const Router=()=>{
-
-  return(
+const Router = () => {
+  return (
     <BrowserRouter>
-     <Sidebar/>
-       <Routes>
-        <Route  path="/users" element={<Users/>}/>
-       </Routes>
-    
+      <Dashboard/>
+      <Routes>
+        <Route />
+      </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default Router
+export default Router;
