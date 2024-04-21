@@ -10,21 +10,27 @@ import Forgotpass from "./Forgotpass/Forgotpass";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <MainLayout/>,
+        element: <MainLayout />,
         children: [
+
+            {
+                index: true,
+                element: <Signup />
+            },
+
             {
                 path: "/Signup",
-                element: <Signup/>
+                element: <Signup />
             },
 
             {
                 path: "/login",
-                element: <Login/>
+                element: <Login />
             },
 
             {
                 path: "/Forgotpass",
-                element: <Forgotpass/>
+                element: <Forgotpass />
             }
         ]
     }
