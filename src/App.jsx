@@ -1,15 +1,18 @@
 
-import "./App.css";
-import { RouterProvider } from "react-router-dom";
-import router from "./router";
+import NewTicket from "./newTicket/newTicket"
+// import TicketForm from "./ticketForm/ticketForm"
 
-function App() {
+
+
+const App = () => {
+ 
+
   return (
     <>
-      
-      <RouterProvider router={router}/>
+      {/* <TicketForm/> */}
+      <NewTicket/>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
