@@ -1,12 +1,18 @@
-import { useState } from "react";
-import "./App.css";
 
-function App() {
+import NewTicket from "./newTicket/newTicket"
+// import TicketForm from "./ticketForm/ticketForm"
+
+
+
+const App = () => {
+ 
+
   return (
     <>
-      <h1>Diamond Techies's CRM-Ticketing..</h1>
+      {/* <TicketForm/> */}
+      <NewTicket/>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
