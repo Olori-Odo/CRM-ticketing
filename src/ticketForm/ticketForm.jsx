@@ -8,7 +8,10 @@ const TicketForm = () => {
     return(
         <section>
             
-            <button id="ticketBtn" type = "">New Ticket</button>
+            <div>
+                {/* <BiMessageSquareEdit/> */}
+                <button id="ticketBtn" type = "">New Ticket</button>
+            </div>
             
             <div className= "complainOverview">
 

@@ -1,6 +1,6 @@
 
-import NewTicket from "./newTicket/newTicket"
-// import TicketForm from "./ticketForm/ticketForm"
+// import NewTicket from "./newTicket/newTicket"
+import TicketForm from "./ticketForm/ticketForm"
 
 
 
@@ -9,8 +9,8 @@ const App = () => {
 
   return (
     <>
-      {/* <TicketForm/> */}
-      <NewTicket/>
+      <TicketForm/>
+      {/* <NewTicket/> */}
     </>
   )
 }
