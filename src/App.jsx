@@ -1,4 +1,10 @@
 
+
+import './App.css'
+
+
+
+
 import NewTicket from "./newTicket/newTicket"
 // import TicketForm from "./ticketForm/ticketForm"
 
@@ -11,8 +17,10 @@ const App = () => {
     <>
       {/* <TicketForm/> */}
       <NewTicket/>
+
     </>
   )
 }
+
 
 export default App

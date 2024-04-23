@@ -1,0 +1,55 @@
+#sidewrapper{
+width: 200px;
+height: 100%;
+text-align: center;
+border-right: 1px solid rgba(231, 231, 231, 1);
+}
+
+
+#heading{
+  
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29.26px;
+  margin-top: 28px;
+  
+
+}
+
+#linkwrapper{
+  margin-top: 48px;
+   width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+ font-weight: 500;
+ align-items: center;
+  gap: 15px;
+  
+}
+
+#links{
+width: 100%;
+height: 45px;
+color: black;
+display: flex;
+align-items: center;
+text-align: left;
+text-decoration: none;
+padding-left: 20px;
+}
+
+
+.active{
+background-color: #F3EFFC;
+color: #7F56D8;
+
+}
+
+
+/*#links.active{
+  background: rgba(127, 86, 216, 0.1);
+  color: blueviolet;
+}
+
+*/
