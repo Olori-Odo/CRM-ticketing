@@ -1,0 +1,62 @@
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content:right;
+}
+
+input{
+    border: solid 1px;
+    border-color: whitesmoke;
+    border-radius: 5px;
+    display: flex;
+    width: 205px;
+    height: 40px;
+    justify-content: center;
+}
+
+select{
+    border-color: whitesmoke;
+    border-radius: 5px;
+    width: 210px;
+    height: 45px;
+    justify-content: center;
+    
+}
+
+#toprow{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:start ;
+    height: 240px;
+    width: 650px;
+
+    gap: 9px
+
+}
+
+.complainTicket{
+    width: 650px;
+    height: 520px;
+    }
+
+.complainOverview{
+    width: 700px;
+    height: 400px;
+    background-color: whitesmoke;
+}
+
+#complain{
+    width: 650px;
+    height: 100px;
+    border-radius: 5px;
+    border-color: whitesmoke;
+}
+
+#submit{
+    width: 150px;
+    height: 50px;
+    color: white;
+    background-color: purple;
+    border: none;
+    border-radius: 5px;
+}
