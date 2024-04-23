@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "navigation",
+=======
+  "name": "ticket-form",
+>>>>>>> 0f3d2ad89652a3084ce63dae0866b4d61398aa8b
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,9 +14,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "history": "^5.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.1.0",
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {

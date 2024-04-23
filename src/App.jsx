@@ -1,14 +1,23 @@
 
-import Router from './router'
+
 import './App.css'
 
 
 
-const App=()=>{
 
-  return(
+import NewTicket from "./newTicket/newTicket"
+// import TicketForm from "./ticketForm/ticketForm"
+
+
+
+const App = () => {
+ 
+
+  return (
     <>
-    <Router/>
+      {/* <TicketForm/> */}
+      <NewTicket/>
+
     </>
   )
 }
