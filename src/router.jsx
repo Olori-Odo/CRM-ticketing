@@ -4,6 +4,7 @@ import DashboardLayout from "./Layout/DashboardLayout";
 import NewTicket from "./newTicket/newTicket";
 import Login from "./LoginForm/Login";
 import SignUp from "./Signup/Signup";
+import Users from "./Users";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <SignUp />,
+      },
+      {
+        path: "/users",
+        element: <Users />,
       },
     ],
   },
