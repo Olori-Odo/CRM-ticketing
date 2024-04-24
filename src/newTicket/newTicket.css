@@ -52,6 +52,7 @@ select {
 }
 
 #submit {
+  margin-left: 500px;
   width: 150px;
   height: 50px;
   color: white;

@@ -1,5 +1,4 @@
-#topbar{
-  
+#topbar {
   width: 100vw;
   height: 85px;
   border: 0px 0px 1px 0px;
@@ -10,19 +9,18 @@
   align-items: center;
 }
 
-#namecontainer{
+#namecontainer {
   font-size: 18px;
   font-weight: 500;
   line-height: 21.94px;
-  margin-left:  20px;
+  margin-left: 20px;
 }
 
-
-#usernoticedash{
+#usernoticedash {
   display: flex;
 }
 
-#notice{
+#notice {
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -33,28 +31,25 @@
   align-items: center;
 }
 
-#userdash{
-width: 208px;
-height: Fixed (56px);
-margin-left: 35px;
-margin-right: 35px;
-display: flex;
-align-items: center;
-
+#userdash {
+  width: 208px;
+  height: Fixed (56px);
+  margin-left: 35px;
+  margin-right: 35px;
+  display: flex;
+  align-items: center;
 }
 
-#userdashimg{
-width: 48px;
-height: 48px;
-border-radius: 50%;
-border: 1px solid black;
-
+#userdashimg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 
-#officialdash{
-font-size: 16px;
-font-weight: 600;
-line-height: 19.5px;
-margin-left: 12px;
+#officialdash {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.5px;
+  margin-left: 12px;
 }
-
