@@ -7,7 +7,7 @@ import SignUp from "./Signup/Signup";
 import Officials from "./officials/Officials";
 
 import Users from "./Users";
-import TicketForm from "./ticketForm/TicketForm";
+import TicketForm from "../src/ticketForm/ticketForm";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +33,8 @@ const router = createBrowserRouter([
       {
         path: "/officials",
         element: <Officials />,
+      },
+      {
         path: "/users",
         element: <Users />,
       },
