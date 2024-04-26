@@ -1,3 +1,6 @@
+import "./ticketForm.css";
+// import {BiMessageSquareEdit} from 'react-icon/bi'
+
 // import { useState } from "react";
 import "./ticketForm.css";
 // import {BiMessageSquareEdit} from 'react-icon/bi'
@@ -34,6 +37,7 @@ import "./ticketForm.css";
 // handleSubmit = () => {
 //   e.preventdefault();
 // };
+
 const TicketForm = () => {
   return (
     <section>
@@ -53,7 +57,11 @@ const TicketForm = () => {
           <div className="complainTicket">
             <div>
               <label>Customer Email</label>
+
+              <input type="text" placeholder="Type Email" />
+
               <input type="email" placeholder="Type Email" />
+
             </div>
 
             <div>
@@ -66,6 +74,7 @@ const TicketForm = () => {
                 <option>Unable to Browse</option>
               </select>
             </div>
+
 
             <div>
               <label>Priority Status</label>
@@ -84,13 +93,14 @@ const TicketForm = () => {
             </div>
           </div>
 
-          <button type="submit" id="submit">
-            Submit
-          </button>
+          <button id="submit">Submit</button>
         </form>
       </div>
     </section>
   );
 };
+
+};
+
 
 export default TicketForm;

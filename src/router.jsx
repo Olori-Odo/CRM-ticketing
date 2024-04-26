@@ -4,6 +4,8 @@ import DashboardLayout from "./Layout/DashboardLayout";
 import NewTicket from "./newTicket/NewTicket";
 import Login from "./LoginForm/Login";
 import SignUp from "./Signup/Signup";
+import Officials from "./officials/Officials";
+
 import Users from "./Users";
 
 const router = createBrowserRouter([
@@ -28,6 +30,8 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
+        path: "/officials",
+        element: <Officials />,
         path: "/users",
         element: <Users />,
       },
