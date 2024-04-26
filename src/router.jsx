@@ -6,6 +6,8 @@ import Login from "./LoginForm/Login";
 import SignUp from "./Signup/Signup";
 import Officials from "./officials/Officials";
 
+import Users from "./Users";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +32,8 @@ const router = createBrowserRouter([
       {
         path: "/officials",
         element: <Officials />,
+        path: "/users",
+        element: <Users />,
       },
     ],
   },

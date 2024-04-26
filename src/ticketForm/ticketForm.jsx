@@ -1,6 +1,43 @@
 import "./ticketForm.css";
 // import {BiMessageSquareEdit} from 'react-icon/bi'
 
+// import { useState } from "react";
+import "./ticketForm.css";
+// import {BiMessageSquareEdit} from 'react-icon/bi'
+
+// const [newTicket, setNewTicket] = useState({
+//   name: "",
+//   email: "",
+//   password: "",
+// });
+
+// handleName = (e) => {
+//   setName(e.target.value);
+// };
+
+// handleName = (e) => {
+//   setEmail(e.target.value);
+// };
+
+// handlePassword = (e) => {
+//   e.target.value;
+// };
+
+// handleNewTicket = (e) => {
+//   const name = e.target.name;
+//   const value = e.tatget.value;
+
+//   setNewTicket((prev) => ({
+//     ...prev,
+//     [name]: value,
+//   }));
+//   console.log(e);
+// };
+
+// handleSubmit = () => {
+//   e.preventdefault();
+// };
+
 const TicketForm = () => {
   return (
     <section>
@@ -20,7 +57,11 @@ const TicketForm = () => {
           <div className="complainTicket">
             <div>
               <label>Customer Email</label>
+
               <input type="text" placeholder="Type Email" />
+
+              <input type="email" placeholder="Type Email" />
+
             </div>
 
             <div>
@@ -33,6 +74,7 @@ const TicketForm = () => {
                 <option>Unable to Browse</option>
               </select>
             </div>
+
 
             <div>
               <label>Priority Status</label>
@@ -57,5 +99,8 @@ const TicketForm = () => {
     </section>
   );
 };
+
+};
+
 
 export default TicketForm;
