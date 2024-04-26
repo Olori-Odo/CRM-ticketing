@@ -26,7 +26,7 @@ import "./newTicket.css";
 
 const NewTicket = () => {
   return (
-    <section>
+    <section id="newticket-wrap">
       <h1>New Ticket</h1>
 
       <div className="complainOverview">
