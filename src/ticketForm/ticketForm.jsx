@@ -2,7 +2,7 @@ import "./ticketForm.css";
 // import {BiMessageSquareEdit} from 'react-icon/bi'
 
 // import { useState } from "react";
-import "./ticketForm.css";
+
 // import {BiMessageSquareEdit} from 'react-icon/bi'
 
 // const [newTicket, setNewTicket] = useState({
@@ -61,7 +61,6 @@ const TicketForm = () => {
               <input type="text" placeholder="Type Email" />
 
               <input type="email" placeholder="Type Email" />
-
             </div>
 
             <div>
@@ -74,7 +73,6 @@ const TicketForm = () => {
                 <option>Unable to Browse</option>
               </select>
             </div>
-
 
             <div>
               <label>Priority Status</label>
@@ -99,8 +97,5 @@ const TicketForm = () => {
     </section>
   );
 };
-
-};
-
 
 export default TicketForm;

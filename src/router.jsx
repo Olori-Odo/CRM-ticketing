@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import TicketForm from "./ticketForm/ticketForm";
+import TicketForm from "./ticketForm/TicketForm";
 import DashboardLayout from "./Layout/DashboardLayout";
 import NewTicket from "./newTicket/NewTicket";
 import Login from "./LoginForm/Login";
