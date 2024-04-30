@@ -9,7 +9,7 @@ const TopBar = () => {
       <div id="namecontainer">
         <p>
           {" "}
-          <FaBarsStaggered /> Welcome! <strong>John Smith</strong>{" "}
+          <FaBarsStaggered /> Welcome! <strong>Lateef Salako</strong>{" "}
         </p>
       </div>
       <div id="usernoticedash">
@@ -23,7 +23,7 @@ const TopBar = () => {
           <div id="officialdash">
             <p>
               {" "}
-              Alex Robert <RiArrowDropDownLine />
+              Lateef Salako <RiArrowDropDownLine />
             </p>
           </div>
         </div>

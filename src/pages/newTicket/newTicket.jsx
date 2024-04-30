@@ -4,6 +4,39 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const NewTicket = () => {
+  const [formdata, setFormData] = useState({
+    Email: "",
+    RequestType: "",
+    Status: "",
+    complain: "",
+    timestamp: new Date().toISOString(),
+  });
+
+  const navigate = useNavigate();
+  let { id } = useParams();
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    const name = e.target.name;
+
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handlesubmit = (e) => {
+    e.preventDefault();
+    console.log(formdata);
+    setFormData({
+      Email: "",
+      RequestType: "",
+      Status: "",
+      complain: "",
+      timestamp: new Date().toISOString(),
+    });
+  };
+
   return (
     <section id="newticket-wrap">
       <h1>New Ticket</h1>
@@ -14,17 +47,26 @@ const NewTicket = () => {
           <p>write and address new querries and issues</p>
         </div>
 
-        <form className="complainTicket">
+        <form className="complainTicket" onSubmit={handlesubmit}>
           <div id="toprow">
             <div>
               <label>Customer Email</label>
-              <input name="email" type="email" placeholder="Type Email" />
+              <input
+                name="email"
+                type="email"
+                onChange={handleChange}
+                placeholder="Type Email"
+              />
             </div>
 
             <div>
               <label>Request Ticket Type</label>
               <br></br>
-              <select label="Request Ticket Type">
+              <select
+                label="Request Ticket Type"
+                name="Requesttype"
+                onChange={handleChange}
+              >
                 <option>Choose Type</option>
                 <option>Unable to Load</option>
                 <option>Unable to Call</option>
@@ -35,7 +77,11 @@ const NewTicket = () => {
             <div>
               <label>Priority Status</label>
               <br></br>
-              <select label="Priority Status">
+              <select
+                label="Priority Status"
+                onChange={handleChange}
+                name="status"
+              >
                 <option>Select Priority</option>
                 <option>New Tickets</option>
                 <option> On-Going Tickets</option>
@@ -46,6 +92,7 @@ const NewTicket = () => {
             <div>
               <label>Ticket Body</label>
               <textarea
+                onChange={handleChange}
                 name="complain"
                 id="complain"
                 type="text"
