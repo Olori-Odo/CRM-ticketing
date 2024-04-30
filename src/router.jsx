@@ -1,13 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import DashboardLayout from "./Layout/DashboardLayout";
-import NewTicket from "./newTicket/NewTicket";
+
 import Login from "./LoginForm/Login";
 import SignUp from "./Signup/Signup";
-import Officials from "./officials/Officials";
+import Officials from "./pages/officials/Officials";
 
 import Users from "./Users";
-import TicketForm from "../src/ticketForm/ticketForm";
+import TicketForm from "./pages/ticketForm/ticketForm";
+import NewTicket from "./pages/newTicket/newTicket";
 
 const router = createBrowserRouter([
   {
