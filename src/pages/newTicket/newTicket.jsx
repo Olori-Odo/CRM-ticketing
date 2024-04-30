@@ -1,28 +1,7 @@
-import { useState } from "react";
 import "./newTicket.css";
-
-// const [createTicket, setCreateTicket] = useState({
-//   email: "",
-//   ticket: "",
-//   priority: [""],
-//   complain: "",
-// });
-
-// const handleChange = (e) => {
-//   const { name, value } = e.target;
-
-//   setCreateTicket(
-//     prev({
-//       ...prev,
-//       [name]: value,
-//     })
-//   );
-// };
-
-// const handleSubmit = (e) => {
-//   e.preventDefault();
-//   console.log(ticket);
-// };
+import { useState, useEffect, useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 const NewTicket = () => {
   return (
@@ -57,10 +36,10 @@ const NewTicket = () => {
               <label>Priority Status</label>
               <br></br>
               <select label="Priority Status">
-                <option>Choose Type</option>
-                <option>Unable to Load</option>
-                <option>Unable to Call</option>
-                <option>Unable to Browse</option>
+                <option>Select Priority</option>
+                <option>New Tickets</option>
+                <option> On-Going Tickets</option>
+                <option>Resolved Tickets</option>
               </select>
             </div>
 
