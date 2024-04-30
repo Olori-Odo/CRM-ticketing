@@ -35,7 +35,8 @@ const NewTicket = () => {
       complain: ""
     });
   };
-
+ 
+  const editmode=false
   return (
     <section id="newticket-wrap">
       <h1>New Ticket</h1>
