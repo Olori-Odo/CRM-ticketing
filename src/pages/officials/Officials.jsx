@@ -1,8 +1,8 @@
 import React from "react";
-import AFO from "../assets/images/AFO.png";
-import Rahmat from "../assets/images/Rahmat.jpeg";
-import Hafsah from "../assets/images/Hafsah.jpeg";
-import img from "../assets/images/avatar.png";
+import AFO from "../../../src/assets/images/AFO.png";
+import Rahmat from "../../../src/assets/images/Rahmat.jpeg";
+import Hafsah from "../../../src/assets/images/Hafsah.jpeg";
+import img from "../../assets/images/avatar.png";
 import "./Officials.css";
 
 const Officials = () => {
