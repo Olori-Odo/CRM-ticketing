@@ -5,9 +5,9 @@ import axios from "axios";
 
 const NewTicket = () => {
   const [formdata, setFormData] = useState({
-    Email: "",
+    email: "",
     RequestType: "",
-    Status: "",
+    status: "",
     complain: "",
     timestamp: new Date().toISOString(),
   });
@@ -29,11 +29,10 @@ const NewTicket = () => {
     e.preventDefault();
     console.log(formdata);
     setFormData({
-      Email: "",
+      email: "",
       RequestType: "",
-      Status: "",
-      complain: "",
-      timestamp: new Date().toISOString(),
+      status: "",
+      complain: ""
     });
   };
 
@@ -54,6 +53,7 @@ const NewTicket = () => {
               <input
                 name="email"
                 type="email"
+                value={formdata.email}
                 onChange={handleChange}
                 placeholder="Type Email"
               />
@@ -65,6 +65,7 @@ const NewTicket = () => {
               <select
                 label="Request Ticket Type"
                 name="Requesttype"
+                value={formdata.RequestType}
                 onChange={handleChange}
               >
                 <option>Choose Type</option>
@@ -81,6 +82,7 @@ const NewTicket = () => {
                 label="Priority Status"
                 onChange={handleChange}
                 name="status"
+                value={formdata.status}
               >
                 <option>Select Priority</option>
                 <option>New Tickets</option>
@@ -95,6 +97,7 @@ const NewTicket = () => {
                 onChange={handleChange}
                 name="complain"
                 id="complain"
+                value={formdata.complain}
                 type="text"
                 placeholder="Type Issue Here"
               />
