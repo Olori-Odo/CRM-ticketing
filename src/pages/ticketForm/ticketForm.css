@@ -1,0 +1,73 @@
+body {
+  display: grid;
+}
+
+section {
+  display: grid;
+  padding: 10px;
+  width: 300px;
+}
+
+input {
+  border: solid 1px;
+  border-color: whitesmoke;
+  border-radius: 5px;
+  display: flex;
+  width: 205px;
+  height: 40px;
+  justify-content: center;
+}
+
+select {
+  border-color: whitesmoke;
+  border-radius: 5px;
+  width: 210px;
+  height: 40px;
+  justify-content: center;
+}
+
+#ticketBtn {
+  width: 100px;
+  height: 40px;
+  color: white;
+  background-color: purple;
+  border: none;
+  border-radius: 5px;
+}
+
+.complainTicket {
+  width: 300px;
+  height: 470px;
+  gap: 5px;
+  padding: 10px 10px;
+
+  justify-content: c;
+}
+
+.complainTicket div {
+  padding-bottom: 20px;
+}
+
+.complainOverview {
+  width: 300px;
+  height: 600px;
+  background-color: whitesmoke;
+  /* align-content: center; */
+  justify-content: center;
+}
+
+#complain {
+  width: 205px;
+  height: 205px;
+  border-radius: 5px;
+  border-color: whitesmoke;
+}
+
+#submit-1 {
+  width: 210px;
+  height: 50px;
+  color: white;
+  background-color: purple;
+  border: none;
+  border-radius: 5px;
+}
