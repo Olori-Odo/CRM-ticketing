@@ -9,16 +9,16 @@ import Officials from "./pages/officials/Officials";
 import Users from "./Users";
 import TicketForm from "./pages/ticketForm/ticketForm";
 import NewTicket from "./pages/newTicket/newTicket";
+import Tickets from "./components/Tickets";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DashboardLayout />,
+
     children: [
       {
         index: true,
-
-        element: <Users />,
+        element: <DashboardLayout />,
       },
       {
         path: "/newticket",
@@ -27,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <TicketForm />,
+      },
+      {
+        path: "/ticket",
+        element: <Tickets />,
       },
       {
         path: "login",

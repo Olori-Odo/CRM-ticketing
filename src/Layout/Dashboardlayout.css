@@ -3,4 +3,11 @@
   justify-content: center;
   width: 100%;
   height: 100vh;
+  overflow: scroll;
+}
+.DashB-ticket-container {
+  padding: 30px;
+}
+.ticket-links {
+  margin-left: 20px;
 }
