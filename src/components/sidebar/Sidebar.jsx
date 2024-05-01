@@ -1,12 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 import { RxDashboard } from "react-icons/rx";
 import { FaRegUser } from "react-icons/fa";
 import { LuTicket } from "react-icons/lu";
 import { HiOutlineUsers } from "react-icons/hi2";
 import { RiSettingsLine } from "react-icons/ri";
+import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
   const links = [
     { id: 1, tolink: "/", icon: <RxDashboard />, label: "Dashboard" },
     { id: 2, tolink: "/users", icon: <FaRegUser />, label: "Users" },
@@ -38,32 +40,19 @@ const Sidebar = () => {
       <div id="heading">TICKET LEAD</div>
 
       <div id="linkwrapper">{linksoutput}</div>
+
+      <div className="icon-links">
+        <div className="icon" onClick={() => navigate("/")}>
+          {" "}
+          <IoArrowBack />
+        </div>
+        <div className="icon" onClick={() => navigate("/ticket")}>
+          {" "}
+          <IoArrowForward />
+        </div>
+      </div>
     </div>
   );
 };
-
-/*
-<NavLink id="links"   to={'/'}>
-          <RxDashboard /> &nbsp;&nbsp; Dashboard
-        </NavLink>
-        <NavLink id="links" to={'/users'}>
-          <FaRegUser />
-          &nbsp;&nbsp; Users
-        </NavLink>
-        <NavLink  to={'/tickets'} id="links">
-          {" "}
-          <LuTicket  /> &nbsp;&nbsp; Tickets
-        </NavLink>
-        <NavLink id="links"  to={'/officials'}>
-          {" "}
-          <HiOutlineUsers />
-          &nbsp;&nbsp; Officials
-        </NavLink>
-        <NavLink to={'/SiteSettings'}   id="links">
-          {" "}
-          <RiSettingsLine />
-          &nbsp;&nbsp;Site Settings{" "}
-        </NavLink>
-  */
 
 export default Sidebar;
