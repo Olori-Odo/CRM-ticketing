@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "./Layout/DashboardLayout";
 
 import Login from "./LoginForm/Login";
-import SignUp from "./Signup/Signup";
+
 import Officials from "./pages/officials/Officials";
 
 import Users from "./Users";
@@ -17,6 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+
         element: <Users />,
       },
       {
