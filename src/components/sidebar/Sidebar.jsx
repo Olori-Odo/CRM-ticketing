@@ -12,7 +12,7 @@ const Sidebar = () => {
   const links = [
     { id: 1, tolink: "/", icon: <RxDashboard />, label: "Dashboard" },
     { id: 2, tolink: "/users", icon: <FaRegUser />, label: "Users" },
-    { id: 3, tolink: "/newticket", icon: <LuTicket />, label: "Tickets" },
+    { id: 3, tolink: "/ticket", icon: <LuTicket />, label: "Tickets" },
     {
       id: 4,
       tolink: "/officials",

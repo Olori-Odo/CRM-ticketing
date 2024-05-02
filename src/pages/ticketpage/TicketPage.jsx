@@ -1,9 +1,11 @@
-import "./newTicket.css";
+import "./TicketPage.css";
 import { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const NewTicket = () => {
+const TicketPage = () => {
+  const editMode = false;
+
   const [formdata, setFormData] = useState({
     email: "",
     RequestType: "",
@@ -32,18 +34,18 @@ const NewTicket = () => {
       email: "",
       RequestType: "",
       status: "",
-      complain: ""
+      complain: "",
     });
   };
- 
-  const editmode=false
+
+  const editmode = false;
   return (
     <section id="newticket-wrap">
-      <h1>New Ticket</h1>
+      <h1> </h1>
 
       <div className="complainOverview">
         <div>
-          <h3>Create Quick Ticket</h3>
+          <h3> {editMode ? "Update your Ticket" : "Create Ticket"} </h3>
           <p>write and address new querries and issues</p>
         </div>
 
@@ -114,4 +116,4 @@ const NewTicket = () => {
   );
 };
 
-export default NewTicket;
+export default TicketPage;

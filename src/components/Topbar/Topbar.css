@@ -1,5 +1,5 @@
 #topbar {
-  width: 83vw;
+  width: 85vw;
   height: 85px;
   border: 0px 0px 1px 0px;
   background: rgba(255, 255, 255, 1);
@@ -31,7 +31,7 @@
   align-items: center;
 }
 
-#userdash {
+#image-container {
   width: 208px;
   height: Fixed (56px);
   margin-left: 35px;
@@ -40,16 +40,17 @@
   align-items: center;
 }
 
-#userdashimg {
+#top-image {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   border: 1px solid black;
   margin-top: 0;
 }
-#top-image {
+/* #top-image {
   margin-top: 0;
-}
+  width: 50px;
+} */
 
 #officialdash {
   font-size: 16px;

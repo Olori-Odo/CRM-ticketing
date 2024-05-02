@@ -1,8 +1,10 @@
 import "./Topbar.css";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FaRegBell } from "react-icons/fa";
-import img from "../../assets/projectimg.png";
+// import img from "../../assets/projectimg.png";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import AvatarDisplay from "./AvatarDisplay";
+
 const TopBar = () => {
   return (
     <div id="topbar">
@@ -17,9 +19,10 @@ const TopBar = () => {
           <FaRegBell />
         </div>
         <div id="userdash">
-          <div id="userdashimg">
+          {/* <div id="userdashimg">
             <img id="top-image" src={img} alt="?" />
-          </div>
+          </div> */}
+          <AvatarDisplay />
           <div id="officialdash">
             <p>
               {" "}

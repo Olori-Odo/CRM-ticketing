@@ -3,6 +3,7 @@ import TopBar from "../components/Topbar/Topbar";
 import Sidebar from "../components/sidebar/Sidebar";
 import "./Dashboardlayout.css";
 import Tickets from "../components/Tickets";
+import AvatarDisplay from "../components/Topbar/AvatarDisplay";
 
 const Dashboard = () => {
   const ticketInfo = [
@@ -36,7 +37,7 @@ const Dashboard = () => {
       title: "Making a Fitness video",
       owner: "Raphael",
       avatar: "",
-      status: "done",
+      status: "working on it",
       priority: 3,
       progress: 50,
       description: "Creating a video for public use",
@@ -44,19 +45,23 @@ const Dashboard = () => {
     },
   ];
 
+  const colors = [
+    "rgb(211,200,235)",
+    "rgb(201,190,200)",
+    "rgb(111,200,250)",
+    "rgb(186,178,195)",
+    "rgb(67,90,55)",
+  ];
+
   const uniqueCategories = [
     ...new Set(ticketInfo?.map(({ category }) => category)),
   ];
 
-  console.log(uniqueCategories);
-
   return (
     <div id="Dashboardwrap">
-      <div>
-        <Sidebar />
-      </div>
+      <Sidebar />
 
-      <div>
+      <div className="dashboard-container">
         <TopBar />
 
         <h1>My Tickets..</h1>
@@ -69,20 +74,22 @@ const Dashboard = () => {
                   <h3> {uniqueCategory} </h3>
 
                   {ticketInfo
-                    .filter((ticket) => ticket.category === uniqueCategories)
+                    .filter((ticket) => ticket.category === uniqueCategory)
                     .map((filteredTicket, _index) => (
-                      <Tickets
-                        id={_index}
-                        color={filteredTicket.color}
-                        ticket={filteredTicket}
-                      />
+                      <div>
+                        <Tickets
+                          key={_index}
+                          color={colors[categoryIndex] || colors[0]}
+                          ticket={filteredTicket}
+                        />
+                      </div>
                     ))}
                 </div>
               ))}
           </div>
-        </div>
 
-        <Outlet />
+          <Outlet />
+        </div>
       </div>
     </div>
   );
