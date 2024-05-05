@@ -1,16 +1,13 @@
 import "./TicketPage.css";
 import { useState, useEffect, useContext } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { response } from "express";
 import axios from "axios";
 
-const TicketPage = () => {
-  const editMode = false;
+// const axios = require(axios);
 
-  const [formdata, setFormData] = useState({
-    // email: "",
-    // RequestType: "",
-    // status: "",
-    // complain: "",
+const TicketPage = () => {
+  const [formData, setFormData] = useState({
     status: "not started",
     timestamp: new Date().toISOString(),
   });
@@ -42,21 +39,25 @@ const TicketPage = () => {
     }));
   };
 
-  const handlesubmit = (e) => {
+  const editMode = false;
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formdata);
-    setFormData({
-      email: "",
-      RequestType: "",
-      status: "",
-      complain: "",
-    });
+
+    if (!editMode) {
+      const response = await axios.post("http://localhost:8080", {
+        formData,
+      });
+      const success = response.status === 200;
+      if (success) {
+        Navigate("/");
+      }
+    }
   };
 
-  const editmode = false;
   return (
     <section id="newticket-wrap">
-      <h1> </h1>
+      <h1> HT </h1>
 
       <div className="complainOverview">
         <div>
@@ -64,14 +65,14 @@ const TicketPage = () => {
           <p>write and address new querries and issues</p>
         </div>
 
-        <form className="complainTicket" onSubmit={handlesubmit}>
+        <form className="complainTicket" onSubmit={handleSubmit}>
           <div id="toprow">
             <div>
               <label>Customer Email</label>
               <input
                 name="email"
                 type="email"
-                value={formdata.email}
+                value={formData.email}
                 onChange={handleChange}
                 placeholder="Type Email"
               />
@@ -83,7 +84,7 @@ const TicketPage = () => {
               <select
                 label="Request Ticket Type"
                 name="RequestType"
-                value={formdata.RequestType}
+                value={formData.RequestType}
                 onChange={handleChange}
                 required={true}
               >
@@ -103,7 +104,7 @@ const TicketPage = () => {
                 label="Priority Status"
                 onChange={handleChange}
                 name="status"
-                value={formdata.status}
+                value={formData.status}
                 required={true}
               >
                 {status?.map((PriorityStatus, _index) => (
@@ -121,7 +122,7 @@ const TicketPage = () => {
                 onChange={handleChange}
                 name="complain"
                 id="complain"
-                value={formdata.complain}
+                value={formData.complain}
                 type="text"
                 placeholder="Type Issue Here"
               />

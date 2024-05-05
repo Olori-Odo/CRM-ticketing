@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "./Layout/DashboardLayout";
 import Login from "./LoginForm/Login";
 import Officials from "./pages/officials/Officials";
-import Users from "./Users";
 import TicketPage from "./pages/ticketpage/TicketPage";
 
 const router = createBrowserRouter([
@@ -26,10 +25,6 @@ const router = createBrowserRouter([
       {
         path: "/officials",
         element: <Officials />,
-      },
-      {
-        path: "/users",
-        element: <Users />,
       },
       {
         path: "*",
