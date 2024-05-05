@@ -1,19 +1,36 @@
-import "./newTicket.css";
+import "./TicketPage.css";
 import { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const NewTicket = () => {
+const TicketPage = () => {
+  const editMode = false;
+
   const [formdata, setFormData] = useState({
-    email: "",
-    RequestType: "",
-    status: "",
-    complain: "",
+    // email: "",
+    // RequestType: "",
+    // status: "",
+    // complain: "",
+    status: "not started",
     timestamp: new Date().toISOString(),
   });
 
-  const navigate = useNavigate();
-  let { id } = useParams();
+  const status = [
+    "Select Priority",
+    " New Tickets",
+    "On-Going Tickets",
+    " Resolved Tickets",
+  ];
+
+  const requestType = [
+    "Choose Type",
+    "Unable to Load",
+    "Unable to Call",
+    "Unable to Browse",
+  ];
+
+  // const navigate = useNavigate();
+  // let { id } = useParams();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -32,18 +49,18 @@ const NewTicket = () => {
       email: "",
       RequestType: "",
       status: "",
-      complain: ""
+      complain: "",
     });
   };
- 
-  const editmode=false
+
+  const editmode = false;
   return (
     <section id="newticket-wrap">
-      <h1>New Ticket</h1>
+      <h1> </h1>
 
       <div className="complainOverview">
         <div>
-          <h3>Create Quick Ticket</h3>
+          <h3> {editMode ? "Update your Ticket" : "Create Ticket"} </h3>
           <p>write and address new querries and issues</p>
         </div>
 
@@ -65,14 +82,17 @@ const NewTicket = () => {
               <br></br>
               <select
                 label="Request Ticket Type"
-                name="Requesttype"
+                name="RequestType"
                 value={formdata.RequestType}
                 onChange={handleChange}
+                required={true}
               >
-                <option>Choose Type</option>
-                <option>Unable to Load</option>
-                <option>Unable to Call</option>
-                <option>Unable to Browse</option>
+                {requestType?.map((RequestType, _index) => (
+                  <option key={_index} value={RequestType}>
+                    {" "}
+                    {RequestType}{" "}
+                  </option>
+                ))}
               </select>
             </div>
 
@@ -84,11 +104,14 @@ const NewTicket = () => {
                 onChange={handleChange}
                 name="status"
                 value={formdata.status}
+                required={true}
               >
-                <option>Select Priority</option>
-                <option>New Tickets</option>
-                <option> On-Going Tickets</option>
-                <option>Resolved Tickets</option>
+                {status?.map((PriorityStatus, _index) => (
+                  <option key={_index} value={PriorityStatus}>
+                    {" "}
+                    {PriorityStatus}{" "}
+                  </option>
+                ))}
               </select>
             </div>
 
@@ -114,4 +137,4 @@ const NewTicket = () => {
   );
 };
 
-export default NewTicket;
+export default TicketPage;

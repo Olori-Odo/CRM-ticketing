@@ -1,30 +1,27 @@
-// const cassandra = require("cassandra-driver");
+// const mongoose = require("mongoose");
 
-// const cloud = {
-//   secureConnectBundle: process.env["ASTRA_DB_SECURE_BUNDLE_PATH"],
+// const connectDB = async () => {
+//   try {
+//     const con = await mongoose.connect(process.env.CONNECTION);
+//     console.log(`MongoDB connected: ${con.connection.host}`);
+//   } catch (error) {
+//     console.log(`Sorry ${error}`);
+//   }
 // };
-// const authProvider = new cassandra.auth.PlainTextAuthProvider(
-//   "token",
-//   process.env["ASTRA_DB_APPLICATION_TOKEN"]
-// );
 
-// const client = new cassandra.Client({ cloud, authProvider });
+// module.exports = connectDB;
 
-// async function run() {
-//   await client.connect();
+import { DataAPIClient } from "@datastax/astra-db-ts";
 
-//   // ...
-// }
+// Initialize the client
+const client = new DataAPIClient(
+  "  AstraCS:YAhdeLjIWwDQFNyauRdwsbmm:04aa8da14cf558fba4471667a0b39d457064933856c0adc9ae909eec92966816 "
+);
+const db = client.db(
+  "https://49d504e0-2b09-44db-8916-f91e653a9d57-us-east-2.apps.astra.datastax.com"
+);
 
-const mongoose = require("mongoose");
-
-const connectDB = async () => {
-  try {
-    const con = await mongoose.connect(process.env.CONNECTION);
-    console.log(`MongoDB connected: ${con.connection.host}`);
-  } catch (error) {
-    console.log(`Sorry ${error}`);
-  }
-};
-
-module.exports = connectDB;
+(async () => {
+  const colls = await db.listCollections();
+  console.log("Connected to AstraDB:", colls);
+})();
