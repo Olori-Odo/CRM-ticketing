@@ -7,15 +7,30 @@ const TicketPage = () => {
   const editMode = false;
 
   const [formdata, setFormData] = useState({
-    email: "",
-    RequestType: "",
-    status: "",
-    complain: "",
+    // email: "",
+    // RequestType: "",
+    // status: "",
+    // complain: "",
+    status: "not started",
     timestamp: new Date().toISOString(),
   });
 
-  const navigate = useNavigate();
-  let { id } = useParams();
+  const status = [
+    "Select Priority",
+    " New Tickets",
+    "On-Going Tickets",
+    " Resolved Tickets",
+  ];
+
+  const requestType = [
+    "Choose Type",
+    "Unable to Load",
+    "Unable to Call",
+    "Unable to Browse",
+  ];
+
+  // const navigate = useNavigate();
+  // let { id } = useParams();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -67,14 +82,17 @@ const TicketPage = () => {
               <br></br>
               <select
                 label="Request Ticket Type"
-                name="Requesttype"
+                name="RequestType"
                 value={formdata.RequestType}
                 onChange={handleChange}
+                required={true}
               >
-                <option>Choose Type</option>
-                <option>Unable to Load</option>
-                <option>Unable to Call</option>
-                <option>Unable to Browse</option>
+                {requestType?.map((RequestType, _index) => (
+                  <option key={_index} value={RequestType}>
+                    {" "}
+                    {RequestType}{" "}
+                  </option>
+                ))}
               </select>
             </div>
 
@@ -86,11 +104,14 @@ const TicketPage = () => {
                 onChange={handleChange}
                 name="status"
                 value={formdata.status}
+                required={true}
               >
-                <option>Select Priority</option>
-                <option>New Tickets</option>
-                <option> On-Going Tickets</option>
-                <option>Resolved Tickets</option>
+                {status?.map((PriorityStatus, _index) => (
+                  <option key={_index} value={PriorityStatus}>
+                    {" "}
+                    {PriorityStatus}{" "}
+                  </option>
+                ))}
               </select>
             </div>
 

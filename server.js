@@ -5,14 +5,14 @@ const cors = require("cors");
 const axios = require("axios");
 const morgan = require("morgan");
 
-dotenv.config();
-
 const app = express();
+
+dotenv.config({ path: "config.env" });
 
 const url =
   "https://517577e5-8274-427e-8c92-ec5ac6993ca4-eu-west-1.apps.astra.datastax.com/api/rest/v2/namespaces/tickets/collections/tasks";
 const token =
-  "AstraCS:BjnOExYxeTONoeFfXOFonCRr:a9e3331a9734dd81f9f1652e6afbc32a87f7765882ccc95a787b48a594e480ac";
+  "AstraCS:YAhdeLjIWwDQFNyauRdwsbmm:04aa8da14cf558fba4471667a0b39d457064933856c0adc9ae909eec92966816";
 
 app.use(morgan("combined"));
 

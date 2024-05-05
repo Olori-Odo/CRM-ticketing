@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProgressDisplay from "./ProgressDisplay";
 import PriorityDisplay from "./PriorityDisplay";
 import StatusDisplay from "./StatusDisplay";
 import DeleteBox from "./DeleteBox";
+import TicketBody from "./ticketBody/TicketBody";
 
 const Tickets = ({ color, ticket }) => {
   return (
@@ -12,17 +12,19 @@ const Tickets = ({ color, ticket }) => {
         <div className="ticket-color" style={{ backgroundColor: color }}></div>
 
         <h3> {ticket.title} </h3>
+
+        <TicketBody />
         <PriorityDisplay />
-        <ProgressDisplay />
+
         <StatusDisplay ticket={ticket.status} />
-        {/* <div className="delete-box">
+        <div className="delete-box">
           <DeleteBox />
-        </div> */}
+        </div>
       </Link>
 
-      <div className="delete-box">
+      {/* <div className="delete-box">
         <DeleteBox />
-      </div>
+      </div> */}
     </div>
   );
 };
