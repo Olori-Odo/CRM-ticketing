@@ -1,28 +1,37 @@
-const PORT = 8080;
+const PORT = 9002;
 const express = require("express");
-const dotenv = require("dotenv");
+require("dotenv").config();
 const cors = require("cors");
-const axios = require("axios");
-const morgan = require("morgan");
-const { default: mongoose } = require("mongoose");
+const bodyParser = require("body-parser");
+//const axios = require("axios");
+//const morgan = require("morgan");
+require("./dbconnection");
 const MydbModel = require("./src/mydb");
 
 const app = express();
 
-dotenv.config({ path: "config.env" });
-
-app.use(express.json());
+//Middlewares
+app.use(bodyParser.json());
 app.use(cors());
-app.use(morgan("tiny"));
-app.use(axios());
 
-mongoose.connect("mongodb://172.24.89.1:27017/mydb");
+//app.use(morgan("tiny"));
+//app.use(axios());
 
-// axios.post("/ola", async (req, res) => {
-//   MydbModel.create(req.body)
-//     .then((officials) => res.json(officials))
-//     .catch((err) => res.json(err));
-// });
+app.post("/register", async (req, res) => {
+  const { firstName, lastName, email, password } = req.body;
+  const officials = new MydbModel({
+    firstName,
+    lastName,
+    email,
+    password,
+  });
+
+  const savedofficials = await officials.save();
+  res.json({
+    messages: "new officials added ",
+    savedofficials: savedofficials,
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server port at PORT:${PORT}`);

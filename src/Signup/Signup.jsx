@@ -28,7 +28,7 @@ const Signup = () => {
     console.log(e);
 
     axios
-      .post("https://localhost:8080/ola", {
+      .post("https://localhost:9002/register", {
         firstName,
         lastName,
         email,
