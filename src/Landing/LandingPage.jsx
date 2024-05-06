@@ -22,9 +22,9 @@ function LandingPage() {
                 </div>
 
                 <div className='buttons'>
-                    <Link to="/login">
-                        <button>Login</button>
-                    </Link>
+                   <Link to= "/login">
+                   <button>Log in</button>
+                   </Link>
                     <Link to="/signup">
                         <button>Sign Up</button>
                     </Link>
@@ -141,7 +141,7 @@ function LandingPage() {
 
                 <div className='grr'>
                     <div className='rere'>
-                        <h2>Diamond <span style={{ color: "#7f56d8" }}>Crm</span></h2>
+                        <h2>Diamond <span style={{ color: "#7f56d8" }}>CRM</span></h2>
                         <p>The fastest and simple way to generate growing business solutions.</p>
                     </div>
 

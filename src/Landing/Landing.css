@@ -1,12 +1,13 @@
-/* body {
-    padding: 5%;
-} */
+body {
+    padding: 25px;
+}
 
 
 .landing-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    
 }
 
 .header {
@@ -23,7 +24,7 @@
 .navigation {
     display: flex;
     justify-content: center;
-    padding-top: 18px;
+    padding-top: 25px;
 }
 
 .navigation a {
@@ -63,6 +64,7 @@ aside {
 
     padding: 50px;
     margin-top: 100px;
+    
 }
 
 
@@ -203,7 +205,7 @@ section {
 }
 
 .ftn {
-    width: 100%;
+    width: 96%;
     height: 400px;
     background-color: #7f56d8;
     border-radius: 10px;

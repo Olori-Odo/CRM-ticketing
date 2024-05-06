@@ -9,45 +9,46 @@ import LandingPage from "./Landing/LandingPage";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />,
     children: [
-      
-      // {
-      //   index: true,
-      //   element: <LandingPage />,
-      // },
 
       {
-        path: "/Dashboard",
-        element: <DashboardLayout/>
+        index: true,
+        element: <LandingPage/>
       },
 
       {
         path: "/signup",
         element: <Signup/>
       },
-      {
-        path: "/ticket",
-        element: <TicketPage />,
-      },
-      {
-        path: "/ticket/:id",
-        element: <TicketPage editMode={true} />,
-      },
+
       {
         path: "/login",
-        element: <Login />,
+        element: <Login/>
       },
+      
+
       {
-        path: "/officials",
-        element: <Officials />,
+        path: "/TicketPage",
+        element: <TicketPage/>
       },
+
       {
-        path: "*",
-        element: "Sorry Page not found",
+        path: "/Officials",
+        element: <Officials/>
       },
+
+
+      {
+        path: "/DashboardLayout",
+        element: <DashboardLayout/>
+      },
+
+      {
+        path: "/ticket/:id",
+        element: <TicketPage/>
+      }
     ],
-  },
+   },
 ]);
 
 export default router;
