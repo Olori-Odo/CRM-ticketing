@@ -14,8 +14,8 @@ const router = createBrowserRouter([
         children: [
 
             {
-                index: true,
-                element: <Signup />
+              index:true,
+                element: <LandingPage/>
             },
 
             {
