@@ -89,13 +89,13 @@ const Signup = () => {
         <button className="submit" type="submit">
           Submit
         </button>
-      </form>
 
-      <div className="inn">
+        <div className="inn">
         <p className="message">
           Already have an account? <Link to="/login">Sign in</Link>
         </p>
       </div>
+      </form>
     </div>
   );
 };
