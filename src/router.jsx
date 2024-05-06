@@ -4,16 +4,27 @@ import Login from "./LoginForm/Login";
 import Officials from "./pages/officials/Officials";
 import TicketPage from "./pages/ticketpage/TicketPage";
 import Signup from "./Signup/Signup";
+import LandingPage from "./Landing/LandingPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Signup />,
-
+    element: <LandingPage />,
     children: [
+      
+      // {
+      //   index: true,
+      //   element: <LandingPage />,
+      // },
+
       {
-        index: true,
-        element: <DashboardLayout />,
+        path: "/Dashboard",
+        element: <DashboardLayout/>
+      },
+
+      {
+        path: "/signup",
+        element: <Signup/>
       },
       {
         path: "/ticket",
