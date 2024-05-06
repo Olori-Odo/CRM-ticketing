@@ -2,15 +2,19 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "./Layout/DashboardLayout";
 import Login from "./LoginForm/Login";
 import Officials from "./pages/officials/Officials";
-import Users from "./Users";
 import TicketPage from "./pages/ticketpage/TicketPage";
+import Signup from "./Signup/Signup";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DashboardLayout />,
+    element: <Signup />,
 
     children: [
+      {
+        index: true,
+        element: <DashboardLayout />,
+      },
       {
         path: "/ticket",
         element: <TicketPage />,
@@ -26,10 +30,6 @@ const router = createBrowserRouter([
       {
         path: "/officials",
         element: <Officials />,
-      },
-      {
-        path: "/users",
-        element: <Users />,
       },
       {
         path: "*",

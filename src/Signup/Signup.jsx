@@ -1,87 +1,103 @@
-import React, { useState } from 'react'
-import './Signup.css'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import "./Signup.css";
+import { Link } from "react-router-dom";
+import axios from "axios";
+
 const Signup = () => {
+  //   const [creatUser, setCreateUser] = useState({
+  //     Firstname: "",
+  //     Lastname: "",
+  //     email: "",
+  //     password: "",
+  //   });
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
-    const [creatUser, setCreateUser] = useState({
-        Firstname: "",
-        Lastname: "",
-        Email: "",
-        Password: "",
-        
+  //   const handleChange = (e) => {
+  //     const { name, value } = e.target;
+  //     setCreateUser((prevUser) => ({
+  //       ...prevUser,
+  //       [name]: value,
+  //     }));
+  //   };
 
-    })
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(e);
 
+    axios
+      .post("https://localhost:8080/ola", {
+        firstName,
+        lastName,
+        email,
+        password,
+      })
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err));
+  };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setCreateUser((prevUser) => ({
-            ...prevUser,
-            [name]: value,
-        }))
-    }
+  return (
+    <div>
+      <form action="/Signup" className="form" onSubmit={handleSubmit}>
+        <p className="title">Register</p>
+        <p className="message">Sign up and get full access to our app.</p>
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(creatUser);
-    }
-    return (
-        <div>
+        <div className="flex">
+          <label>
+            <input
+              type="text"
+              className="Input"
+              name="firstName"
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+            <span>Firstname</span>
+          </label>
 
-            <form className='form' onSubmit={handleSubmit}>
-                <p className='title'>Register</p>
-                <p className='message'>Sign up and get full access to our app.</p>
-
-                <div className='flex'>
-                    <label>
-                        <input type="text" className='Input'
-                            name='Firstname'
-                            value={creatUser.Firstname}
-                            onChange={handleChange} />
-                        <span>Firstname</span>
-                    </label>
-
-                    <label>
-                        <input type="text" className='Input'
-                            name='Lastname'
-                            value={creatUser.Lastname}
-                            onChange={handleChange} />
-                        <span>Lastname</span>
-                    </label>
-                </div>
-
-
-                <label>
-                    <input type="email" className='Input'
-                        name='Email'
-                        value={creatUser.Email}
-                        onChange={handleChange} />
-                    <span>Email</span>
-                </label>
-
-
-
-                <label>
-                    <input type="password" className='Input'
-                        name='Password'
-                        value={creatUser.Password}
-                        onChange={handleChange} />
-                    <span>Password</span>
-                </label>
-
-
-
-
-
-                <button className='submit' type='submit'>Submit</button>
-
-                <div className='inn'>
-                    <p className='message'>Already have an account? <Link to="/login">Sign in</Link></p>
-                </div>
-
-            </form>
+          <label>
+            <input
+              type="text"
+              className="Input"
+              name="lastName"
+              onChange={(e) => setLastName(e.target.value)}
+            />
+            <span>Lastname</span>
+          </label>
         </div>
-    )
-}
 
-export default Signup
+        <label>
+          <input
+            type="email"
+            className="Input"
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <span>Email</span>
+        </label>
+
+        <label>
+          <input
+            type="password"
+            className="Input"
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <span>Password</span>
+        </label>
+
+        <button className="submit" type="submit">
+          Submit
+        </button>
+      </form>
+
+      <div className="inn">
+        <p className="message">
+          Already have an account? <Link to="/login">Sign in</Link>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Signup;
