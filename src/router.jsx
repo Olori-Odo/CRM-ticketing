@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element: <TicketPage editMode={true} />,
       },
       {
-        path: "login",
+        path: "/login",
         element: <Login />,
       },
       {
