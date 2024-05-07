@@ -14,7 +14,7 @@ const Tickets = ({ color, ticket }) => {
         <h3> {ticket.title} </h3>
 
         <TicketBody />
-        <PriorityDisplay />
+        <PriorityDisplay priority={ticket.priority} />
 
         <StatusDisplay ticket={ticket.status} />
         <div className="delete-box">

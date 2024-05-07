@@ -48,7 +48,7 @@ const Login = () => {
           <Link to="/Forgotpass">Reset Password</Link>
         </div>
 
-        <Link to="/DashboardLayout">
+        <Link to="/ticket">
           <button className="sign">Sign in</button>
         </Link>
 

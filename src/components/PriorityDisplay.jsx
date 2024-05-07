@@ -1,7 +1,7 @@
 import React from "react";
 
-const PriorityDisplay = () => {
-  return <div>PriorityDisplay</div>;
+const PriorityDisplay = ({ priority }) => {
+  return <div>{priority}</div>;
 };
 
 export default PriorityDisplay;
