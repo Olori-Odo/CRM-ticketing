@@ -2,6 +2,7 @@ import "./TicketPage.css";
 import { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const TicketPage = () => {
   const editMode = false;
@@ -60,7 +61,10 @@ const TicketPage = () => {
 
       <div className="complainOverview">
         <div>
-          <h3> {editMode ? "Update your Ticket" : "Create Ticket"} </h3>
+          <h3 className="h">
+            {" "}
+            {editMode ? "Update your Ticket" : "Create Ticket"}{" "}
+          </h3>
           <p>write and address new querries and issues</p>
         </div>
 
@@ -128,9 +132,11 @@ const TicketPage = () => {
             </div>
           </div>
 
-          <button type="submit" id="submit">
-            Send Ticket
-          </button>
+          <Link to="/DashboardLayout">
+            <button type="submit" id="submit">
+              Send Ticket
+            </button>
+          </Link>
         </form>
       </div>
     </section>

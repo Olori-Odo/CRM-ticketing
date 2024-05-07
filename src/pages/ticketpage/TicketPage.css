@@ -1,7 +1,7 @@
 #newticket-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: right;
+  justify-content: center;
   margin: 50px;
 }
 
@@ -42,6 +42,10 @@ select {
   width: 700px;
   height: 400px;
   background-color: whitesmoke;
+  padding-left: 30px;
+}
+.h {
+  margin-bottom: 10px;
 }
 
 #complain {

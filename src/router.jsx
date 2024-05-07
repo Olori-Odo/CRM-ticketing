@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/TicketPage",
+        path: "/ticket",
         element: <TicketPage />,
       },
 

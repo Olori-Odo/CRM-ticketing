@@ -8,37 +8,37 @@ import AvatarDisplay from "../components/Topbar/AvatarDisplay";
 const Dashboard = () => {
   const ticketInfo = [
     {
-      category: "Q1 2022",
+      email: "SalakoLateef@yahoo.com",
       color: "red",
-      title: "Debugging",
-      owner: "Rahmat",
+      title: "Unable to load",
+      owner: "Lateef",
       avatar: "",
       status: "stuck",
-      priority: 5,
+      priority: "New Ticket",
       progress: 40,
       description: "trying to locate where error is coming from in my code",
       timestamp: "2024-05-01T-12:33:12+0000",
     },
     {
-      category: "Q1 2022",
+      email: "Q1 2022",
       color: "Green",
-      title: "Troubleshooting",
+      title: "Unable to call",
       owner: "Akinyemi",
       avatar: "",
       status: "done",
-      priority: 4,
+      priority: "Ongoing Ticket",
       progress: 80,
       description: "Searching to repair faults",
       timestamp: "2024-05-01T-04-33-12+0000",
     },
     {
-      category: " Q2 2022",
+      email: " Q2 2022",
       color: "blue",
-      title: "Making a Fitness video",
+      title: "Unable to browse",
       owner: "Raphael",
       avatar: "",
       status: "working on it",
-      priority: 3,
+      priority: "Resolved Ticket",
       progress: 50,
       description: "Creating a video for public use",
       timestamp: "2024-04-01T:07:33-12+0000",
@@ -53,9 +53,7 @@ const Dashboard = () => {
     "rgb(67,90,55)",
   ];
 
-  const uniqueCategories = [
-    ...new Set(ticketInfo?.map(({ category }) => category)),
-  ];
+  const uniqueCategories = [...new Set(ticketInfo?.map(({ email }) => email))];
 
   return (
     <div id="Dashboardwrap">
@@ -74,7 +72,7 @@ const Dashboard = () => {
                   <h3> {uniqueCategory} </h3>
 
                   {ticketInfo
-                    .filter((ticket) => ticket.category === uniqueCategory)
+                    .filter((ticket) => ticket.email === uniqueCategory)
                     .map((filteredTicket, _index) => (
                       <div>
                         <Tickets
