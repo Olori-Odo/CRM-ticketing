@@ -86,15 +86,18 @@ const Signup = () => {
           <span>Password</span>
         </label>
 
-        <button className="submit" type="submit">
-          Submit
-        </button>
+        <Link to="/login">
+          <button className="submit" type="submit">
+            {" "}
+            Submit{" "}
+          </button>
+        </Link>
 
         <div className="inn">
-        <p className="message">
-          Already have an account? <Link to="/login">Sign in</Link>
-        </p>
-      </div>
+          <p className="message">
+            Already have an account? <Link to="/login">Sign in</Link>
+          </p>
+        </div>
       </form>
     </div>
   );
