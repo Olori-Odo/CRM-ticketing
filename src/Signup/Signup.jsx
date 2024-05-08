@@ -40,7 +40,7 @@ const Signup = () => {
 
   return (
     <div>
-      <form action="/Signup" className="form" onSubmit={handleSubmit}>
+      <form action="/signup" className="form" onSubmit={handleSubmit}>
         <p className="title">Register</p>
         <p className="message">Sign up and get full access to our app.</p>
 
