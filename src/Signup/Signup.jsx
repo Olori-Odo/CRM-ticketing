@@ -12,8 +12,8 @@ const Signup = () => {
   //   });
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   //   const handleChange = (e) => {
   //     const { name, value } = e.target;

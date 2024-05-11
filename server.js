@@ -1,4 +1,4 @@
-// const PORT = 9002;
+const PORT = 9002;
 const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
@@ -9,7 +9,8 @@ require("./dbconnection");
 const MydbModel = require("./src/mydb");
 
 const app = express();
-PORT = process.env.PORT || 9002;
+
+// PORT = process.env.PORT || 9002;
 
 //Middlewares
 app.use(bodyParser.json());
@@ -18,7 +19,11 @@ app.use(morgan("tiny"));
 
 //app.use(axios());
 
-app.post("/register/:id", async (req, res) => {
+app.get("/", (req, res) => {
+  res.send("MongoDB connected Successful...");
+});
+
+app.post("/register", async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
   const officials = new MydbModel({
     firstName,
