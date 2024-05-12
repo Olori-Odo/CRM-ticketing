@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
 import router from "./router";
-import Sidebar from "./components/sidebar/Sidebar";
+import "./layout/Dashboardlayout.css";
 
 const App = () => {
   return (

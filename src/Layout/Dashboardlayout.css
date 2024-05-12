@@ -12,6 +12,9 @@
   height: 100vh;
   overflow: scroll;
 }
+.app {
+  width: 100%;
+}
 /* ---Tickets--- */
 
 #tickets-wrap #ticket-links {
