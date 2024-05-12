@@ -15,10 +15,10 @@ const mydbSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    // required: true,
+    required: true,
     // unique: true,
     min: 5,
-    max: 255,
+    max: 55,
   },
   password: {
     type: String,
