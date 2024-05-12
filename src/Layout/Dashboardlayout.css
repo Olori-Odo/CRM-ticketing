@@ -12,6 +12,9 @@
   height: 100vh;
   overflow: scroll;
 }
+.app {
+  width: 100%;
+}
 /* ---Tickets--- */
 
 #tickets-wrap #ticket-links {
@@ -36,5 +39,5 @@
   text-decoration: none;
 }
 a {
-  color: black;
+  color: rgb(65, 37, 109);
 }

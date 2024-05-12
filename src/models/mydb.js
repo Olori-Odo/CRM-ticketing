@@ -3,20 +3,20 @@ const mongoose = require("mongoose");
 const mydbSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    required: true,
+    // required: true,
     min: 3,
     max: 100,
   },
   lastName: {
     type: String,
-    required: true,
+    // required: true,
     min: 3,
     max: 100,
   },
   email: {
     type: String,
-    required: true,
-    unique: true,
+    // required: true,
+    // unique: true,
     min: 5,
     max: 255,
   },
@@ -28,6 +28,6 @@ const mydbSchema = new mongoose.Schema({
   },
 });
 
-const MydbModel = mongoose.model("users", mydbSchema);
+const MydbModel = mongoose.model("registers", mydbSchema);
 
 module.exports = MydbModel;

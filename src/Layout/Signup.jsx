@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Signup.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   //   const [creatUser, setCreateUser] = useState({
@@ -10,10 +11,12 @@ const Signup = () => {
   //     email: "",
   //     password: "",
   //   });
+  const navigate = useNavigate();
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   //   const handleChange = (e) => {
   //     const { name, value } = e.target;
@@ -23,12 +26,11 @@ const Signup = () => {
   //     }));
   //   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(e);
-
     axios
-      .post("https://localhost:9002/register", {
+      .post("http://localhost:9002/signup", {
         firstName,
         lastName,
         email,
@@ -36,11 +38,18 @@ const Signup = () => {
       })
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
+
+    navigate("/login");
   };
 
   return (
     <div>
-      <form action="/Signup" className="form" onSubmit={handleSubmit}>
+      <form
+        action="/signup"
+        className="form"
+        onSubmit={handleSubmit}
+        method="POST"
+      >
         <p className="title">Register</p>
         <p className="message">Sign up and get full access to our app.</p>
 
@@ -86,12 +95,10 @@ const Signup = () => {
           <span>Password</span>
         </label>
 
-        <Link to="/login">
-          <button className="submit" type="submit">
-            {" "}
-            Submit{" "}
-          </button>
-        </Link>
+        <button className="submit" type="submit">
+          {" "}
+          Submit{" "}
+        </button>
 
         <div className="inn">
           <p className="message">
