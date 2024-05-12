@@ -15,8 +15,8 @@ const mydbSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true,
-    unique: true,
+    // required: true,
+    // unique: true,
     min: 5,
     max: 255,
   },
@@ -28,6 +28,6 @@ const mydbSchema = new mongoose.Schema({
   },
 });
 
-const MydbModel = mongoose.model("users", mydbSchema);
+const MydbModel = mongoose.model("Register", mydbSchema);
 
 module.exports = MydbModel;

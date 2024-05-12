@@ -3,7 +3,6 @@ const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
 const bodyParser = require("body-parser");
-//const axios = require("axios");
 const morgan = require("morgan");
 require("./dbconnection");
 const MydbModel = require("./src/mydb");
@@ -17,13 +16,13 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan("tiny"));
 
-//app.use(axios());
+// app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.send("MongoDB connected Successful...");
+  res.send("Mongodb successfully connected");
 });
 
-app.post("/register", async (req, res) => {
+app.post("/registers", async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
   const officials = new MydbModel({
     firstName,
@@ -37,6 +36,9 @@ app.post("/register", async (req, res) => {
     messages: "new officials added ",
     savedofficials: savedofficials,
   });
+  console.log(savedofficials);
+  // .then(console.log({ savedofficials }))
+  // .catch((err) => res.json(err));
 });
 
 app.listen(PORT, () => {

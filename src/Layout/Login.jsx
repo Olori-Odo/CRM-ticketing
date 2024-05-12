@@ -23,7 +23,12 @@ const Login = () => {
     <div className="form-container">
       <p className="heading">Login</p>
 
-      <form className="contain" onSubmit={handleLog}>
+      <form
+        action="/login"
+        method="POST"
+        className="contain"
+        onSubmit={handleLog}
+      >
         <div className="input-group">
           <label>Username</label>
           <input
