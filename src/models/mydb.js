@@ -28,6 +28,6 @@ const mydbSchema = new mongoose.Schema({
   },
 });
 
-const MydbModel = mongoose.model("Register", mydbSchema);
+const MydbModel = mongoose.model("registers", mydbSchema);
 
 module.exports = MydbModel;

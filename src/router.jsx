@@ -9,6 +9,7 @@ import LandingPage from "./Landing/LandingPage";
 const router = createBrowserRouter([
   {
     path: "/",
+
     children: [
       {
         index: true,

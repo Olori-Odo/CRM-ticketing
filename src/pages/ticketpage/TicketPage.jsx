@@ -3,16 +3,16 @@ import { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { name } from "ejs";
 
 const TicketPage = () => {
   const editMode = false;
 
   const [formdata, setFormData] = useState({
-    // email: "",
-    // RequestType: "",
-    // status: "",
-    // complain: "",
+    email: "",
+    requestType: "",
     status: "not started",
+    complain: "",
     timestamp: new Date().toISOString(),
   });
 
@@ -45,13 +45,19 @@ const TicketPage = () => {
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    console.log(formdata);
-    setFormData({
-      email: "",
-      RequestType: "",
-      status: "",
-      complain: "",
-    });
+    // console.log(formdata);
+    axios
+      .post("http://localhost:9002/ticket", { name: value })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => console.log(err));
+    // setFormData({
+    //   email: "",
+    //   RequestType: "",
+    //   status: "",
+    //   complain: "",
+    // });
   };
 
   const editmode = false;
@@ -71,7 +77,7 @@ const TicketPage = () => {
         <form className="complainTicket" onSubmit={handlesubmit}>
           <div id="toprow">
             <div>
-              <label>Customer Email</label>
+              <label htmlFor="email">Customer Email</label>
               <input
                 name="email"
                 type="email"
@@ -82,12 +88,11 @@ const TicketPage = () => {
             </div>
 
             <div>
-              <label>Request Ticket Type</label>
+              <label htmlFor="requestType">Request Ticket Type</label>
               <br></br>
               <select
-                label="Request Ticket Type"
-                name="RequestType"
-                value={formdata.RequestType}
+                name="requestType"
+                value={formdata.requestType}
                 onChange={handleChange}
                 required={true}
               >
@@ -101,10 +106,9 @@ const TicketPage = () => {
             </div>
 
             <div>
-              <label>Priority Status</label>
+              <label htmlFor="status">Priority Status</label>
               <br></br>
               <select
-                label="Priority Status"
                 onChange={handleChange}
                 name="status"
                 value={formdata.status}
@@ -120,7 +124,7 @@ const TicketPage = () => {
             </div>
 
             <div>
-              <label>Ticket Body</label>
+              <label htmlFor="complain">Ticket Body</label>
               <textarea
                 onChange={handleChange}
                 name="complain"
@@ -132,11 +136,9 @@ const TicketPage = () => {
             </div>
           </div>
 
-          <Link to="/DashboardLayout">
-            <button type="submit" id="submit">
-              Send Ticket
-            </button>
-          </Link>
+          <button type="submit" id="submit">
+            Send Ticket
+          </button>
         </form>
       </div>
     </section>

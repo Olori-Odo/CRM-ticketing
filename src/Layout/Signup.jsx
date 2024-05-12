@@ -29,9 +29,8 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(e);
-
     axios
-      .post("https://localhost:9002/registers", {
+      .post("http://localhost:9002/signup", {
         firstName,
         lastName,
         email,
@@ -48,7 +47,7 @@ const Signup = () => {
       <form
         action="/signup"
         className="form"
-        onSubmit={() => handleSubmit}
+        onSubmit={handleSubmit}
         method="POST"
       >
         <p className="title">Register</p>
