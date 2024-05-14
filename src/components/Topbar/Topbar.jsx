@@ -5,33 +5,33 @@ import { FaRegBell } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import AvatarDisplay from "./AvatarDisplay";
 
-const TopBar = () => {
+const TopBar = ({ ticket }) => {
   return (
-    <div id="topbar">
-      <div id="namecontainer">
-        <p>
-          {" "}
-          <FaBarsStaggered /> Welcome! <strong>Lateef Salako</strong>{" "}
-        </p>
-      </div>
-      <div id="usernoticedash">
-        <div id="notice">
-          <FaRegBell />
+    <>
+      <div id="topbar">
+        <div id="namecontainer">
+          <p>
+            {" "}
+            <FaBarsStaggered /> Welcome! <strong> {ticket.owner} </strong>{" "}
+          </p>
         </div>
-        <div id="userdash">
-          {/* <div id="userdashimg">
-            <img id="top-image" src={img} alt="?" />
-          </div> */}
-          <AvatarDisplay />
+        <div id="usernoticedash">
+          <div id="notice">
+            <FaRegBell />
+          </div>
+          <div id="userdash">
+            <AvatarDisplay owner={ticket.owner} avatar={ticket.avatar} />
+          </div>
+
           <div id="officialdash">
             <p>
               {" "}
-              Lateef Salako <RiArrowDropDownLine />
+              {ticket.owner} <RiArrowDropDownLine />
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

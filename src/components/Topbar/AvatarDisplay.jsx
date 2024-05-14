@@ -1,15 +1,16 @@
 import React from "react";
-import Avatar from "../../assets/projectimg.png";
+import BlankAvatar from "../../assets/projectimg.png";
 
-const AvatarDisplay = () => {
+const AvatarDisplay = ({ owner, avatar }) => {
   return (
     <div className="avatar-container">
       <div className="image-container">
-        <img id="top-image" src={Avatar} alt="avatar display" />
-        {/* <img
-          src={ticket.avatar ? ticket.avatar : BlankAvatar}
-          alt={"photo of " + ticket.owner}
-        /> */}
+        {/* <img id="top-image" src={Avatar} alt="avatar display" /> */}
+        <img
+          id="top-image"
+          src={avatar ? avatar : BlankAvatar}
+          alt={"photo of " + owner}
+        />
       </div>
     </div>
   );

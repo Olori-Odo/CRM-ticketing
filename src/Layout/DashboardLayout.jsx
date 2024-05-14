@@ -4,15 +4,18 @@ import Sidebar from "../components/sidebar/Sidebar";
 import "./Dashboardlayout.css";
 import Tickets from "../components/Tickets";
 import AvatarDisplay from "../components/Topbar/AvatarDisplay";
+import Hafsah from "../assets/images/Hafsah.jpeg";
+import Rahmat from "../assets/images/Rahmat.jpeg";
+import AFO from "../assets/images/AFO.png";
 
 const Dashboard = () => {
   const ticketInfo = [
     {
-      email: "SalakoLateef@yahoo.com",
+      email: "Akinyemifatai@yahoo.com",
       color: "red",
       title: "Unable to load",
-      owner: "Lateef",
-      avatar: "",
+      owner: "Fatai Akiyemi",
+      avatar: AFO,
       status: "stuck",
       priority: "New Ticket",
       progress: 40,
@@ -23,26 +26,26 @@ const Dashboard = () => {
       email: "HafsahFash@yahoo.com",
       color: "Green",
       title: "Unable to call",
-      owner: "Fashola",
-      avatar: "",
+      owner: "Fashola Hafsat",
+      avatar: Hafsah,
       status: "done",
       priority: "Ongoing Ticket",
       progress: 80,
       description: "Searching to repair faults",
       timestamp: "2024-05-01T-04-33-12+0000",
     },
-    // {
-    //   email: " Q2 2022",
-    //   color: "blue",
-    //   title: "Unable to browse",
-    //   owner: "Raphael",
-    //   avatar: "",
-    //   status: "working on it",
-    //   priority: "Resolved Ticket",
-    //   progress: 50,
-    //   description: "Creating a video for public use",
-    //   timestamp: "2024-04-01T:07:33-12+0000",
-    // },
+    {
+      email: " Q2 2022",
+      color: "blue",
+      title: "Unable to browse",
+      owner: "Rahmat T.",
+      avatar: Rahmat,
+      status: "working on it",
+      priority: "Resolved Ticket",
+      progress: 50,
+      description: "Creating a video for public use",
+      timestamp: "2024-04-01T:07:33-12+0000",
+    },
   ];
 
   const colors = [
@@ -60,7 +63,7 @@ const Dashboard = () => {
       <Sidebar />
 
       <div className="dashboard-container">
-        <TopBar />
+        {/* <TopBar /> */}
 
         <h1>My Tickets..</h1>
 
@@ -70,6 +73,18 @@ const Dashboard = () => {
               uniqueCategories?.map((uniqueCategory, categoryIndex) => (
                 <div key={categoryIndex}>
                   <h3> {uniqueCategory} </h3>
+
+                  {ticketInfo
+                    .filter((ticket) => ticket.email === uniqueCategory)
+                    .map((filteredTicket, _index) => (
+                      <div>
+                        <TopBar
+                          key={_index}
+                          ticket={filteredTicket}
+                          avatar={filteredTicket.avatar}
+                        />
+                      </div>
+                    ))}
 
                   {ticketInfo
                     .filter((ticket) => ticket.email === uniqueCategory)
