@@ -5,12 +5,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  //   const [creatUser, setCreateUser] = useState({
-  //     Firstname: "",
-  //     Lastname: "",
-  //     email: "",
-  //     password: "",
-  //   });
   const navigate = useNavigate();
 
   const [firstName, setFirstName] = useState("");
@@ -18,17 +12,9 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  //   const handleChange = (e) => {
-  //     const { name, value } = e.target;
-  //     setCreateUser((prevUser) => ({
-  //       ...prevUser,
-  //       [name]: value,
-  //     }));
-  //   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+
     axios
       .post("http://localhost:9002/signup", {
         firstName,
