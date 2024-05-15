@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import DashboardLayout from "../src/layout/DashboardLayout.jsx";
-import Login from "../src/layout/Login.jsx";
+import DashboardLayout from "./Layout/DashboardLayout.jsx";
+import Login from "./Layout/DashboardLayout.jsx";
 import Officials from "./pages/officials/Officials";
 import TicketPage from "./pages/ticketpage/TicketPage";
-import Signup from "../src/layout/Signup.jsx";
+import SignUp from "./Layout/SignUp.jsx";
 import LandingPage from "./Landing/LandingPage";
 
 const router = createBrowserRouter([
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
 
       {
         path: "/signup",
-        element: <Signup />,
+        element: <SignUp />,
       },
 
       {
