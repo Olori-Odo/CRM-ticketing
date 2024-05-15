@@ -25,10 +25,12 @@ app.get("/", (req, res) => {
 });
 
 app.post("/ticket", (req, res) => {
-  const { name, value } = req.body;
+  const { email, requestType, status, complain } = req.body;
   UserTicketModel.create({
-    name: name,
-    value: value,
+    email,
+    requestType,
+    status,
+    complain,
   })
     .then((UserTicket) => res.json(UserTicket))
     .catch((err) => res.json(err));

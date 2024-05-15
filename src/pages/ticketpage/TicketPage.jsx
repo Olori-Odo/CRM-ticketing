@@ -3,27 +3,31 @@ import { useState, useEffect, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { name } from "ejs";
 
 const TicketPage = () => {
   const editMode = false;
 
-  const [formdata, setFormData] = useState({
-    email: "",
-    requestType: "",
-    status: "not started",
-    complain: "",
-    timestamp: new Date().toISOString(),
-  });
+  const [email, setEmail] = useState();
+  const [requestType, setRequestType] = useState();
+  const [status, setStatus] = useState();
+  const [complain, setComplain] = useState();
 
-  const status = [
+  // const [formdata, setFormData] = useState({
+  //   email: "",
+  //   requestType: "",
+  //   status: "not started",
+  //   complain: "",
+  //   timestamp: new Date().toISOString(),
+  // });
+
+  const priority = [
     "Select Priority",
     " New Tickets",
     "On-Going Tickets",
     " Resolved Tickets",
   ];
 
-  const requestType = [
+  const request = [
     "Choose Type",
     "Unable to Load",
     "Unable to Call",
@@ -33,21 +37,25 @@ const TicketPage = () => {
   // const navigate = useNavigate();
   // let { id } = useParams();
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    const name = e.target.name;
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target.value;
 
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  //   setFormData((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
 
   const handlesubmit = (e) => {
     e.preventDefault();
     // console.log(formdata);
     axios
-      .post("http://localhost:9002/ticket", { name: value })
+      .post("http://localhost:9002/ticket", {
+        email,
+        requestType,
+        status,
+        complain,
+      })
       .then((result) => {
         console.log(result);
       })
@@ -81,8 +89,7 @@ const TicketPage = () => {
               <input
                 name="email"
                 type="email"
-                value={formdata.email}
-                onChange={handleChange}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Type Email"
               />
             </div>
@@ -92,11 +99,10 @@ const TicketPage = () => {
               <br></br>
               <select
                 name="requestType"
-                value={formdata.requestType}
-                onChange={handleChange}
+                onChange={(e) => setRequestType(e.target.value)}
                 required={true}
               >
-                {requestType?.map((RequestType, _index) => (
+                {request?.map((RequestType, _index) => (
                   <option key={_index} value={RequestType}>
                     {" "}
                     {RequestType}{" "}
@@ -109,12 +115,11 @@ const TicketPage = () => {
               <label htmlFor="status">Priority Status</label>
               <br></br>
               <select
-                onChange={handleChange}
                 name="status"
-                value={formdata.status}
+                onChange={(e) => setStatus(e.target.value)}
                 required={true}
               >
-                {status?.map((PriorityStatus, _index) => (
+                {priority?.map((PriorityStatus, _index) => (
                   <option key={_index} value={PriorityStatus}>
                     {" "}
                     {PriorityStatus}{" "}
@@ -126,10 +131,9 @@ const TicketPage = () => {
             <div>
               <label htmlFor="complain">Ticket Body</label>
               <textarea
-                onChange={handleChange}
+                onChange={(e) => setComplain(e.target.value)}
                 name="complain"
                 id="complain"
-                value={formdata.complain}
                 type="text"
                 placeholder="Type Issue Here"
               />
